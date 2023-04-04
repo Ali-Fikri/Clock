@@ -1,15 +1,124 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;0,800;1,100;1,200;1,400;1,600&display=swap");
+body, .container, .analog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.analog {
+  position: relative;
+  background-color: #2f363d;
+  width: 450px;
+  height: 450px;
+  margin-bottom: 30px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  box-shadow: 10px 50px 70px rgba(0, 0, 0, 0.25), inset 5px 5px 10px rgba(0, 0, 0, 0.5), inset 5px 5px 20px rgba(0, 0, 0, 0.2), inset -5px -5px 15px rgba(0, 0, 0, 0.75);
+}
+.analog::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #2f363d;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  z-index: 11;
+}
+.analog .number {
+  position: absolute;
+  inset: 20px;
+  color: #fff;
+  text-align: center;
+  transform: rotate(calc(30deg * var(--i)));
+  -webkit-transform: rotate(calc(30deg * var(--i)));
+  -moz-transform: rotate(calc(30deg * var(--i)));
+  -ms-transform: rotate(calc(30deg * var(--i)));
+  -o-transform: rotate(calc(30deg * var(--i)));
+}
+.analog .number b {
+  font-size: 2rem;
+  font-weight: 600;
+  opacity: 0.25;
+  display: inline-block;
+  transform: rotate(calc(-30deg * var(--i)));
+  -webkit-transform: rotate(calc(-30deg * var(--i)));
+  -moz-transform: rotate(calc(-30deg * var(--i)));
+  -ms-transform: rotate(calc(-30deg * var(--i)));
+  -o-transform: rotate(calc(-30deg * var(--i)));
+}
+.analog .circle {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  border: 2px solid rgba(0, 0, 0, 0.25);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.analog .circle#second {
+  width: 300px;
+  height: 300px;
+  z-index: 10;
+}
+.analog .circle#minute {
+  width: 240px;
+  height: 240px;
+  z-index: 9;
+}
+.analog .circle#hour {
+  width: 180px;
+  height: 180px;
+  z-index: 8;
+}
+.analog .circle .hand {
+  position: absolute;
+  width: 8px;
+  height: 50%;
+  background-color: var(--clr);
+  opacity: 0.75;
+  transform: scale(0.5);
+  -webkit-transform: scale(0.5);
+  -moz-transform: scale(0.5);
+  -ms-transform: scale(0.5);
+  transform-origin: bottom;
+}
+.analog .circle .hand.second {
+  width: 4px;
+}
+.analog .circle .hand.minute {
+  width: 6px;
+}
+.analog .circle::after {
+  content: "";
+  position: absolute;
+  top: -8.5px;
+  width: 15px;
+  height: 15px;
+  background-color: var(--clr);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  box-shadow: 0 0 20px var(--clr), 0 0 60px var(--clr);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-}
-
-.container .analog, .container, body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 body {
@@ -27,112 +136,4 @@ body {
   -o-border-radius: 20px;
   border-top-left-radius: 225px;
   border-top-right-radius: 225px;
-}
-.container .analog {
-  position: relative;
-  background-color: #2f363d;
-  width: 450px;
-  height: 450px;
-  margin-bottom: 30px;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-  box-shadow: 10px 50px 70px rgba(0, 0, 0, 0.25), inset 5px 5px 10px rgba(0, 0, 0, 0.5), inset 5px 5px 20px rgba(0, 0, 0, 0.2), inset -5px -5px 15px rgba(0, 0, 0, 0.75);
-}
-.container .analog::after {
-  content: "";
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  background-color: #2f363d;
-  border: 3px solid #fff;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-  z-index: 11;
-}
-.container .analog .number {
-  position: absolute;
-  inset: 20px;
-  color: #fff;
-  text-align: center;
-  transform: rotate(calc(30deg * var(--i)));
-  -webkit-transform: rotate(calc(30deg * var(--i)));
-  -moz-transform: rotate(calc(30deg * var(--i)));
-  -ms-transform: rotate(calc(30deg * var(--i)));
-  -o-transform: rotate(calc(30deg * var(--i)));
-}
-.container .analog .number b {
-  font-size: 2rem;
-  font-weight: 600;
-  opacity: 0.25;
-  display: inline-block;
-  transform: rotate(calc(-30deg * var(--i)));
-  -webkit-transform: rotate(calc(-30deg * var(--i)));
-  -moz-transform: rotate(calc(-30deg * var(--i)));
-  -ms-transform: rotate(calc(-30deg * var(--i)));
-  -o-transform: rotate(calc(-30deg * var(--i)));
-}
-.container .analog .circle {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  border: 2px solid rgba(0, 0, 0, 0.25);
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-}
-.container .analog .circle#second {
-  width: 300px;
-  height: 300px;
-  z-index: 10;
-}
-.container .analog .circle#minute {
-  width: 240px;
-  height: 240px;
-  z-index: 9;
-}
-.container .analog .circle#hour {
-  width: 180px;
-  height: 180px;
-  z-index: 8;
-}
-.container .analog .circle .hand {
-  position: absolute;
-  width: 8px;
-  height: 50%;
-  background-color: var(--clr);
-  opacity: 0.75;
-  transform: scale(0.5);
-  -webkit-transform: scale(0.5);
-  -moz-transform: scale(0.5);
-  -ms-transform: scale(0.5);
-  transform-origin: bottom;
-}
-.container .analog .circle .hand.second {
-  width: 4px;
-}
-.container .analog .circle .hand.minute {
-  width: 6px;
-}
-.container .analog .circle::after {
-  content: "";
-  position: absolute;
-  top: -8.5px;
-  width: 15px;
-  height: 15px;
-  background-color: var(--clr);
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-  box-shadow: 0 0 20px var(--clr), 0 0 60px var(--clr);
 }/*# sourceMappingURL=style.css.map */

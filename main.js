@@ -11,6 +11,6 @@ function setClock() {
   const hour = now.getHours() * 30;
 
   hourCircle.style.transform = `rotateZ(${hour + (minutes / 12)}deg)`;
-  minuteCircle.style.transform = `rotateZ(${minuteCircle}deg)`;
+  minuteCircle.style.transform = `rotateZ(${minutes}deg)`;
   secondCircle.style.transform = `rotateZ(${seconds}deg)`;
 };
