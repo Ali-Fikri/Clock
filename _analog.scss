@@ -1,4 +1,4 @@
-@use 'placeholder' as *;
+@use 'helpers' as *;
 
 .analog {
   @extend %center;
@@ -12,9 +12,9 @@
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
-  box-shadow: 10px 50px 70px rgba(0, 0, 0, 0.25),
-    inset 5px 5px 10px rgba(0, 0, 0, 0.5), inset 5px 5px 20px rgba(0, 0, 0, 0.2),
-    inset -5px -5px 15px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 50px 70px rgba($dark, 0.25),
+    inset 5px 5px 10px rgba($dark, 0.5), inset 5px 5px 20px rgba($light, 0.2),
+    inset -5px -5px 15px rgba($dark, 0.75);
 
   &::after {
     content: "";
@@ -22,7 +22,7 @@
     width: 8px;
     height: 8px;
     background-color: #2f363d;
-    border: 3px solid #fff;
+    border: 3px solid $light;
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
@@ -34,7 +34,7 @@
   .number {
     position: absolute;
     inset: 20px;
-    color: #fff;
+    color: $light;
     text-align: center;
     transform: rotate(calc(30deg * var(--i)));
     -webkit-transform: rotate(calc(30deg * var(--i)));
@@ -60,24 +60,24 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    border: 2px solid rgba(0, 0, 0, 0.25);
+    border: 2px solid rgba($dark, 0.25);
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
 
-    &#second {
+    &#analog-second {
       width: 300px;
       height: 300px;
       z-index: 10;
     }
-    &#minute {
+    &#analog-minute {
       width: 240px;
       height: 240px;
       z-index: 9;
     }
-    &#hour {
+    &#analog-hour {
       width: 180px;
       height: 180px;
       z-index: 8;

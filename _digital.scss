@@ -1,0 +1,51 @@
+@use "helpers" as *;
+.digital {
+  display: flex;
+  margin-bottom: 40px;
+  padding: 10px 20px;
+  font-size: 2rem;
+  font-weight: 600;
+  border: 2px solid rgba($dark, 0.5);
+  border-radius: 40px;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  -ms-border-radius: 40px;
+  -o-border-radius: 40px;
+  box-shadow: 5px 5px 10px rgba($dark, 0.5),
+    inset 5px 5px 20px rgba($light, 0.2),
+    inset -5px -5px 15px rgba($dark, 0.75);
+
+  div {
+    position: relative;
+    width: 60px;
+    text-align: center;
+    color: var(--clr);
+
+    &#digital-hour::after,
+    &#digital-minute::after {
+      content: ":";
+      position: absolute;
+      right: -5px;
+      top: -2px;
+    }
+    &#digital-minute::after {
+      animation: animate steps(2) 1s infinite;
+      -webkit-animation: animate steps(2) 1s infinite;
+    }
+
+    &#period {
+      @extend %center;
+      font-size: 1rem;
+      color: $light;
+    }
+  }
+}
+
+@keyframes animate {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

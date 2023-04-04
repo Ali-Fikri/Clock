@@ -13,14 +13,14 @@
     <div class="container">
       <!-- Start Analog Clock -->
       <div class="analog">
-        <div class="circle " id="second" style="--clr: #04fc43">
-          <span class="hand second"></span>
+        <div class="circle" id="analog-hour" style="--clr: #ff2972">
+          <span class="hand hour"></span>
         </div>
-        <div class="circle " id="minute" style="--clr: #fee800">
+        <div class="circle" id="analog-minute" style="--clr: #fee800">
           <span class="hand minute"></span>
         </div>
-        <div class="circle " id="hour" style="--clr: #ff2972">
-          <span class="hand hour"></span>
+        <div class="circle" id="analog-second" style="--clr: #04fc43">
+          <span class="hand second"></span>
         </div>
 
         <span class="number" style="--i: 1"><b>1</b></span>
@@ -39,7 +39,12 @@
       <!-- End Analog Clock -->
 
       <!-- Start Digital Clock -->
-      
+      <div class="digital">
+        <div class="digits "id="digital-hour" style="--clr: #ff2972">00</div>
+        <div class="digits "id="digital-minute" style="--clr: #fee800">00</div>
+        <div class="digits "id="digital-second" style="--clr: #04fc43">00</div>
+        <div id="period">AM</div>
+      </div>
       <!-- End Digital Clock -->
     </div>
     <script src="main.js"></script>
