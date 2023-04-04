@@ -6,7 +6,7 @@
   font-family: "Poppins", sans-serif;
 }
 
-.container .clock, .container, body {
+.container .analog, .container, body {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,7 +28,7 @@ body {
   border-top-left-radius: 225px;
   border-top-right-radius: 225px;
 }
-.container .clock {
+.container .analog {
   position: relative;
   background-color: #2f363d;
   width: 450px;
@@ -41,7 +41,7 @@ body {
   -o-border-radius: 50%;
   box-shadow: 10px 50px 70px rgba(0, 0, 0, 0.25), inset 5px 5px 10px rgba(0, 0, 0, 0.5), inset 5px 5px 20px rgba(0, 0, 0, 0.2), inset -5px -5px 15px rgba(0, 0, 0, 0.75);
 }
-.container .clock::after {
+.container .analog::after {
   content: "";
   position: absolute;
   width: 8px;
@@ -55,7 +55,7 @@ body {
   -o-border-radius: 50%;
   z-index: 11;
 }
-.container .clock .number {
+.container .analog .number {
   position: absolute;
   inset: 20px;
   color: #fff;
@@ -66,7 +66,7 @@ body {
   -ms-transform: rotate(calc(30deg * var(--i)));
   -o-transform: rotate(calc(30deg * var(--i)));
 }
-.container .clock .number b {
+.container .analog .number b {
   font-size: 2rem;
   font-weight: 600;
   opacity: 0.25;
@@ -77,7 +77,7 @@ body {
   -ms-transform: rotate(calc(-30deg * var(--i)));
   -o-transform: rotate(calc(-30deg * var(--i)));
 }
-.container .clock .circle {
+.container .analog .circle {
   position: absolute;
   display: flex;
   justify-content: center;
@@ -89,22 +89,22 @@ body {
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
 }
-.container .clock .circle.circle-1 {
+.container .analog .circle#second {
   width: 300px;
   height: 300px;
   z-index: 10;
 }
-.container .clock .circle.circle-2 {
+.container .analog .circle#minute {
   width: 240px;
   height: 240px;
   z-index: 9;
 }
-.container .clock .circle.circle-3 {
+.container .analog .circle#hour {
   width: 180px;
   height: 180px;
   z-index: 8;
 }
-.container .clock .circle .hand {
+.container .analog .circle .hand {
   position: absolute;
   width: 8px;
   height: 50%;
@@ -116,13 +116,13 @@ body {
   -ms-transform: scale(0.5);
   transform-origin: bottom;
 }
-.container .clock .circle .hand.second {
+.container .analog .circle .hand.second {
   width: 4px;
 }
-.container .clock .circle .hand.minute {
+.container .analog .circle .hand.minute {
   width: 6px;
 }
-.container .clock .circle::after {
+.container .analog .circle::after {
   content: "";
   position: absolute;
   top: -8.5px;
